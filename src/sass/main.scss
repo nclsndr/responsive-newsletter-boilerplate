@@ -1,0 +1,23 @@
+// ==========================================================================
+// Main style in app
+// ==========================================================================
+
+// Tiny reset
+html, body, .main{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+// Custom styles
+
+h1{
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  text-align: center;
+}
+img{
+  display: block;
+  margin: 20px auto;
+  width: 150px;
+}
