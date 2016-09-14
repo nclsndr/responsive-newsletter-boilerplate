@@ -4,7 +4,8 @@
   "description": "A simple tool to make responsive newsletter",
   "main": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "gulp default",
+    "build": "gulp build"
   },
   "author": "nclsndr",
   "license": "MIT",
