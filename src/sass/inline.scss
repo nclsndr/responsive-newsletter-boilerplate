@@ -1,0 +1,85 @@
+/* ------------------------------------------
+ * Main style (desktop)
+ *------------------------------------------- */
+@import "vars";
+
+/* ------------------------------------------
+ * Layout classes
+ *------------------------------------------- */
+html, body, .root{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+table, tbody, th, tr, td {
+  border: none;
+  padding: 0;
+  border-image-width: 0;
+}
+.preview-text { // Prevent preview display
+  display:none;
+  font-size:1px;
+  color:#333333;
+  line-height:1px;
+  max-height:0;
+  max-width:0;
+  opacity:0;
+  overflow: hidden;
+}
+.full-width { // apply on <div> elem
+  width: 100%;
+  &>table {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+}
+.wrapper { // apply on <td> elem
+  display: block;
+  max-width: $containerMaxWidth;
+  margin: 0 auto;
+  clear: both;
+  .content { // apply on <div> child of <td.container>
+    max-width: $containerMaxWidth;
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    &>table { // Apply is 1 col
+      margin: 0;
+      padding: 0;
+      width: 100%;
+    }
+  }
+}
+.col-2 {
+  float: left;
+  width: 50%;
+  margin: 0;
+  padding: 0;
+  &>table {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+}
+.clear {
+  clear: both;
+  display: block;
+}
+
+
+// Custom styles
+.gray-bg {
+  background: #BBB;
+}
+h1{
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  text-align: left;
+}
+img{
+  display: block;
+  margin: 20px auto;
+  width: 150px;
+}
