@@ -6,80 +6,156 @@
 /* ------------------------------------------
  * Layout classes
  *------------------------------------------- */
+// Basic classes
 html, body, .root{
   margin: 0;
   padding: 0;
   width: 100%;
-  -webkit-font-smoothing: antialiased;
+  border: 0;
 }
-table, tbody, th, tr, td {
+body {
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust:100%;
+  -ms-text-size-adjust:100%;
+}
+table, tbody {
   border: none;
   padding: 0;
   border-image-width: 0;
 }
-.preview-text { // Prevent preview display
-  display:none;
-  font-size:1px;
-  color:#333333;
-  line-height:1px;
-  max-height:0;
-  max-width:0;
-  opacity:0;
-  overflow: hidden;
+table, td {
+  mso-table-lspace: 0pt;
+  mso-table-rspace: 0pt;
 }
-.full-width { // apply on <div> elem
+table {
+  border-collapse: collapse !important;
+}
+td, tr {
+  padding: 0;
+}
+h1, h2, h3, p, span, a, td {
+  font-family: $defaultFontFamily;
+  color: $defaultTextColor;
+}
+a {
+  text-decoration: none;
+}
+img {
+  border: 0;
+}
+.preview-text { // Prevent preview display
+  display:none !important;
+  font-size:1px;
+  color: #FFF;
+  line-height:1px;
+  max-height:0 !important;
+  max-width:0 !important;
+  opacity:0 !important;
+  overflow: hidden !important;
+}
+
+// Grid system
+.wrapper { // apply on <table> elem (child of table.root)
+  width: $containerMaxWidth;
+  margin: 0 auto;
+  clear: both;
+  height: 100%;
+  &>td {
+    vertical-align: top;
+  }
+}
+.col-l-2 {
+  width: $containerMaxWidth/2 - 4px;
+  margin: 0;
+  padding: 0;
+}
+.col-l-3 {
+  width: $containerMaxWidth/3 - 3px;
+  margin: 0;
+  padding: 0;
+}
+.col-l-4 {
+  width: $containerMaxWidth/4 - 2px;
+  margin: 0;
+  padding: 0;
+}
+.col-full-width {
+  width: $containerMaxWidth;
+  padding: 0;
+  margin: 0;
+}
+
+// Helper classes
+.img-cover {
+  width: $containerMaxWidth;
+  img {
+    display: block;
+    width: $containerMaxWidth;
+  }
+}
+.img-fit-content {
+  overflow: hidden;
   width: 100%;
-  &>table {
-    margin: 0;
-    padding: 0;
+  img {
     width: 100%;
   }
 }
-.wrapper { // apply on <td> elem
-  display: block;
-  max-width: $containerMaxWidth;
-  margin: 0 auto;
-  clear: both;
-  .content { // apply on <div> child of <td.container>
-    max-width: $containerMaxWidth;
+td.img-background-cover { // Does not work on Outlook (only background color)
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: scroll;
+}
+
+.t-center {
+  text-align: center;
+}
+.t-left {
+  text-align: left;
+}
+.t-right {
+  text-align: right;
+}
+
+.unsubscribe {
+  .unsubscribe_pusher {
+    height: 20px;
     width: 100%;
-    margin: 0 auto;
-    display: block;
-    &>table { // Apply is 1 col
-      margin: 0;
-      padding: 0;
-      width: 100%;
+  }
+  table {
+    background: #4e4e4e;
+    width: $containerMaxWidth;
+  }
+  .unsubscribe_content {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    a {
+      color: #FFF;
+      font-size: 12px;
+      text-decoration: underline;
     }
   }
 }
-.col-2 {
-  float: left;
-  width: 50%;
-  margin: 0;
-  padding: 0;
-  &>table {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-  }
-}
-.clear {
-  clear: both;
-  display: block;
-}
+/* ------------------------------------------
+ * Custom Classes
+ *------------------------------------------- */
 
-
-// Custom styles
 .gray-bg {
   background: #BBB;
+}
+.img-background-cover {
+  height: 80px;
+  background: #3088a2 url("http://depot.nclsndr.fr/assets/responsive_newsletter/l_cover.jpeg");
+  h1 {
+    color: #FFF;
+  }
 }
 h1{
   font-family: Helvetica, Arial, sans-serif;
   font-size: 18px;
   text-align: left;
-}
-img{
-  display: block;
-  margin: 20px auto;
-  width: 150px;
 }

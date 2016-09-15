@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Code examples tricks</title>
+    </head>
+    <body>
+    <h2>Display background on Outlook</h2>
+    <p>Only works on body tag</p>
+    <pre>
+
+        <!--[if gte mso 9]>
+        <v:background xmlns:v="urn:schemas-microsoft-com:vml" fill="t">
+            <v:fill type="tile" src="http://depot.nclsndr.fr/assets/responsive_newsletter/l_cover.jpeg" color="#9b7f6f"/>
+        </v:background>
+        <![endif]-->
+        <table height="100%" width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+            <td valign="top" align="left" background="http://depot.nclsndr.fr/assets/responsive_newsletter/l_cover.jpeg">
+                <table>
+                	<tr>
+                		<td>
+                			here some content
+                		</td>
+                	</tr>
+                </table>
+            </td>
+        </tr>
+        </table>
+
+    </pre>
+    </body>
+</html>
+

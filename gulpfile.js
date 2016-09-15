@@ -8,6 +8,7 @@ var insert = require('gulp-insert');
 var browserSync = require('browser-sync');
 var fs = require('fs');
 var minifyCss = require('gulp-minify-css');
+var minifyHTML = require('gulp-htmlmin');
 
 var debug = require('gulp-debug');
 
@@ -35,7 +36,7 @@ gulp.task('default', ['browser-sync-dev', 'injectDev'], function () {
   gulp.watch(index, ['bs-reload']);
 });
 
-gulp.task('build', ['externalCSS'], function () {
+gulp.task('build', ['minifyHTML'], function () {
 });
 
 gulp.task('browser-sync-dev', function () {
@@ -143,3 +144,12 @@ gulp.task('externalCSS', ['inlineProd', 'minifyCss'], function () {
       .pipe(gulp.dest(buildDir));
   }, 1000);
 });
+
+gulp.task('minifyHTML', ['externalCSS'], function() {
+  return gulp.src(indexBuild)
+    .pipe(minifyHTML({
+      // removeComments: true
+      // collapseWhitespace: true
+    }))
+    .pipe(gulp.dest(buildDir))
+})
