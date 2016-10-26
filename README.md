@@ -25,6 +25,10 @@ Background image basically does not work on Outlook (OS: MS)
 
 [Outlook Conditional CSS](http://templates.mailchimp.com/development/css/outlook-conditional-css/)
 
+#### Mailchimp mandatory footer
+
+[Mailchimp footer knowledge base](http://kb.mailchimp.com/campaigns/footer/customize-your-footer-content)
+
 ## Road Map
 
 add Inky support https://github.com/zurb/inky
